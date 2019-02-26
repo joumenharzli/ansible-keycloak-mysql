@@ -1,6 +1,6 @@
 # Keycloak MySQL Playbook
 
-A playbook for running Keycloak and MySQL.
+A playbook for running Keycloak and MySQL on Docker.
 Database data is persisted in a docker volume.
 
 ## Running
