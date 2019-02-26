@@ -1,15 +1,14 @@
-environement: dev
+environement: prod
 network_name: keycloak_mysql
 
 # Keycloak
 keycloak_port: 8888
-keycloak_db_name: keycloak
-keycloak_db_user: keycloak
-keycloak_db_pwd: keycloak
-keycloak_admin_name: admin
-keycloak_admin_pwd: admin
+keycloak_db_name: '{{ vault_keycloak_db_name }}'
+keycloak_db_user: '{{ vault_keycloak_db_user }}'
+keycloak_db_pwd: '{{ vault_keycloak_db_pwd }}'
+keycloak_admin_name: '{{ vault_keycloak_admin_name }}'
+keycloak_admin_pwd: '{{ vault_keycloak_admin_pwd }}'
 
 # MySQL
 mysql_port: 3306
-mysql_root_pwd: root
-
+mysql_root_pwd: '{{ vault_mysql_root_pwd }}'
