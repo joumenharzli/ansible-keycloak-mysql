@@ -1,0 +1,3 @@
+/roles/docker_stack/generated
+/roles/docker_stack/templates/generated
+*.retry

@@ -1,0 +1,20 @@
+- name: Check Docker Network
+  shell: docker network ls | grep {{ network_name }}
+  register: docker_network_exists
+  ignore_errors: true
+
+- name: Create Docker Network
+  shell: docker network create {{ network_name }}
+  when: docker_network_exists.stdout == ''
+
+- name: Check Docker MySQL volume
+  shell: docker volume ls | grep {{ mysql_volume_name }}
+  register: docker_mysql_volume_exists
+  ignore_errors: true
+
+- name: Create Docker Volume
+  shell: docker volume create {{ mysql_volume_name }}
+  when: docker_mysql_volume_exists.stdout == ''
+
+- name: Run Docker Compose file for the environement {{ environement }}
+  shell: docker-compose -f "{{role_path}}/generated/docker-compose-{{ environement }}.yml" up -d

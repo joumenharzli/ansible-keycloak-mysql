@@ -1,0 +1,9 @@
+- name: ansible create directory example
+  file:
+    path: "{{role_path}}/generated/"
+    state: directory
+
+- name: Generate Docker Compose file for the environement {{ environement }}
+  template:
+    src: "{{role_path}}/templates/docker-compose.j2"
+    dest: "{{role_path}}/generated/docker-compose-{{ environement }}.yml"

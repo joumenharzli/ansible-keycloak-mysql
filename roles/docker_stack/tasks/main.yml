@@ -1,0 +1,2 @@
+ - include_tasks: "generate-docker-compose.yml"
+ - include_tasks: "run-docker-compose.yml"

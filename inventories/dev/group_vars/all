@@ -1,0 +1,15 @@
+environement: dev
+network_name: keycloak_mysql
+
+# Keycloak
+keycloak_port: 8888
+keycloak_db_name: keycloak
+keycloak_db_user: keycloak
+keycloak_db_pwd: keycloak
+keycloak_admin_name: admin
+keycloak_admin_pwd: admin
+
+# MySQL
+mysql_port: 3306
+mysql_root_pwd: root
+
